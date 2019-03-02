@@ -12,5 +12,6 @@ Hole.prototype.draw = function() {
   this.ctx.arc(80, 75, 35, 0, 2 * Math.PI);
   this.ctx.strokeStyle = "grey";
   this.ctx.stroke();
+  this.ctx.lineWidth = 15;
   this.ctx.fill();
 }
