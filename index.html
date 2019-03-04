@@ -9,7 +9,16 @@
 </head>
 <body>
   <div class="MainGame">
-    <canvas id="canvas"></canvas>
+    <div class="MainGame__start">
+        <div class="MainGame__start-title">IronHackBall</div>
+        <div class="MainGame__start-button" onclick="startGame()">Start Game</div>
+    </div>
+    <div class="MainGame__game">
+        <canvas id="canvas"></canvas>
+        <div class="GameOver" id="GameOver">
+          Oops, has perdido!
+        </div>
+    </div>
   </div>
   <script src="js/ball.js"></script> 
   <script src="js/hole.js"></script>

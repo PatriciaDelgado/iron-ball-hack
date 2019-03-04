@@ -1,8 +1,60 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+div{
+  box-sizing: border-box;
+}
 .MainGame{
+  padding: 0 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  color: white;
+  text-align: center;
 }
 #canvas {
   border:1px solid red;
+}
+.MainGame__start{
+  width: 600px;
+  height: 650px;
+  border: 1px solid red;
+  background-color: darkslategrey;
+}
+.MainGame__start-title{
+  font-size: 40px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.MainGame__start-button{
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MainGame__game{
+  position: relative;
+}
+.GameOver{
+  width: 400px;
+  padding: 20px 50px;
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.GameOver__active{
+  display: block;
 }
