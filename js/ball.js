@@ -8,23 +8,13 @@ function Ball(ctx){
   this.velocityY = 1;
   this.color = 'orange';
 }
-//Ball.prototype.moveLeft = function(){
-  //this.posX -= 5;
-  //console.log(this.posX)
-//}
-//Ball.prototype.moveRight = function(){
-  //this.posX += 5;
-  //console.log(this.posX)
-//}
 Ball.prototype.move = function() {
   document.onkeydown = function(e) {
     switch (e.keyCode) {
       case 37:
-        //this.moveLeft();
         this.isMovingLeft = true;
         break;
       case 39:
-        //this.moveRight();
         this.isMovingRight = true;
         break;
     }

@@ -18,6 +18,7 @@ Game.prototype.update = function() {
   this.hole.draw();
   this.ball.move();
   this.ball.draw();
+  this.hole.collision(this.ball);
 }
 
 
