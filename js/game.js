@@ -7,11 +7,12 @@ function Game(){
   this.hole = new Hole(this.ctx);
   this.ball = new Ball(this.ctx);
 }
-/* var obstacles = [];
-  for (i = 0; i < 10; i++) {
-    obstacles.push(this.hole)
-  }  */
-  //mover a los lados la bola
+var myHoles = [];
+/* myHoles.push(new Hole(this.ctx) );
+   for (i = 0; i < 10; i++) {
+    this.hole.draw();
+  } 
+  console.log(myHoles);*/
 
 Game.prototype.update = function() {
   this.background.draw()
