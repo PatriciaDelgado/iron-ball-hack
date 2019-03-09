@@ -1,6 +1,16 @@
 window.onload = function(){
-  var game = new Game('canvas');
   
-  var interval = setInterval(game.update.bind(game), 1000/60);
+  document.getElementById("startButton").onclick = function() {
+    var gameBg = document.getElementById("myGameBg");
+    gameBg.classList.remove("hide");
   
+    var gameStartBg = document.getElementById("GameStartBg");
+    gameStartBg.classList.add("hide");
+    startGame();
+  };
+  
+  function startGame() {
+    var game = new Game('canvas');
+    var interval = setInterval(game.update.bind(game), 1000/60);
+  }
 }

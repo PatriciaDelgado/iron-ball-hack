@@ -8,11 +8,10 @@ function Game(){
   this.ball = new Ball(this.ctx);
 }
 var myHoles = [];
-/* myHoles.push(new Hole(this.ctx) );
    for (i = 0; i < 10; i++) {
-    this.hole.draw();
+    myHoles.push(new Hole(this.ctx, this.x, this.y));
   } 
-  console.log(myHoles);*/
+  console.log(myHoles);
 
 Game.prototype.update = function() {
   this.background.draw()
@@ -21,8 +20,6 @@ Game.prototype.update = function() {
   this.ball.draw();
   this.hole.collision(this.ball);
 }
-
-
 
 
 /* 

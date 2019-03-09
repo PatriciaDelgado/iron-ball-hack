@@ -1,10 +1,10 @@
 
-function Hole(ctx){
+function Hole(ctx, x, y){
   this.ctx = ctx;
   this.radio = 35;
-  this.x = this.radio*2;
-  this.y = this.radio*2;
-  //this.height = 50;
+  this.x = Math.floor(Math.random() * (this.radio * 2));
+  this.y = Math.floor(Math.random() * (this.radio * 2))
+  //this.y = this.radio*2;
   this.color = 'black';
   this.good = true;
   this.bad = false;

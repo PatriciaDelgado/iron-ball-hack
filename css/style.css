@@ -8,7 +8,7 @@ div{
 .MainGame{
   padding: 0 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
@@ -56,5 +56,11 @@ div{
   display: none;
 }
 .GameOver__active{
+  display: block;
+}
+.hide{
+  display: none;
+}
+.show{
   display: block;
 }
