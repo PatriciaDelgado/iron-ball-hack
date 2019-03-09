@@ -5,6 +5,7 @@ function Ball(ctx){
   this.posY = 580;
   this.isMovingRight = false;
   this.isMovingLeft = false;
+  this.startMoveTop = false;
   this.velocityY = 1;
   this.color = 'orange';
   this.area = (this.radio * this.radio * Math.PI);
@@ -18,6 +19,9 @@ Ball.prototype.move = function() {
       case 39:
         this.isMovingRight = true;
         break;
+      case 38:
+      this.startMoveTop = true;
+        break;
     }
   }.bind(this)
   document.onkeyup = function(e) {
@@ -26,9 +30,11 @@ Ball.prototype.move = function() {
   }.bind(this)
 
   if(this.isMovingRight === true && this.posX + this.radio <= canvas.width)this.posX += 5;
-  if(this.isMovingLeft === true && this.posX > 0)this.posX -= 5;
+  if(this.isMovingLeft === true && this.posX - this.radio > 0)this.posX -= 5;
+  if(this.startMoveTop === true)this.posY -= this.velocityY;
   //function startGame() {}
-  this.posY -= this.velocityY;
+  
+  //gameover function
   if(this.posY <= (0 + this.radio)){
     var element = document.getElementById('GameOver');
     element.classList.add("GameOver__active");

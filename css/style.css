@@ -14,12 +14,10 @@ div{
   text-align: center;
 }
 #canvas {
-  border:1px solid red;
 }
 .MainGame__start{
   width: 600px;
   height: 650px;
-  border: 1px solid red;
   background-color: darkslategrey;
 }
 .MainGame__start-title{
@@ -63,4 +61,7 @@ div{
 }
 .show{
   display: block;
+}
+.Score{
+  position: absolute;
 }
