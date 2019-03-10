@@ -1,6 +1,6 @@
 function Ball(ctx){
   this.ctx = ctx;
-  this.radio = 25;
+  this.radio = 15;
   this.posX = 300;
   this.posY = 580;
   this.isMovingRight = false;
@@ -47,6 +47,24 @@ Ball.prototype.draw = function() {
   this.ctx.fill();
   this.ctx.closePath();
   
+}
+//puntuación de la bola
+function score (objectBall){
+  if (
+    objectBall.y <= 260 &&
+    objectBall.y >= 240 &&
+    objectBall.x + objectBall.radius <= 125 &&
+    objectBall.x - objectBall.radius >= 0
+    ){
+      Score++;
+      objectBall.x = 600;
+      objectBall.y = 200;
+      objectBall.vx = 9;
+      objectBall.vy = 6;
+      ctx.font = "16px Arial";
+      ctx.fillStyle = "#0095DD";
+      ctx.fillText("Score: "+Score, 8, 20);
+  }
 }
 
 
