@@ -97,7 +97,9 @@ function Game(){
 
 
 Game.prototype.update = function() {
-  this.background.draw();
+
+  this.ctx.clearRect(0,0, canvas.width, canvas.height);
+  //this.background.draw();
   this.myHoles.forEach(function(obstacle) {
     obstacle.draw();
     obstacle.collision(this.ball);
