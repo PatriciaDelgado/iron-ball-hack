@@ -6,7 +6,7 @@ div{
   box-sizing: border-box;
 }
 .MainGame{
-  padding: 0 50px;
+  /*padding: 0 50px;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,16 @@ div{
   justify-content: center;
 }
 .MainGame__game{
+  width: 100vw;
+  height: 100vh;
   position: relative;
+  background: url(../img/space-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 .GameOver{
   width: 400px;

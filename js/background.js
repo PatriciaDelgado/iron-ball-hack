@@ -2,7 +2,7 @@
 function Background(ctx) {
   this.ctx = ctx;
   this.img = new Image();
-  this.img.src = './img/wall.jpg';
+  this.img.src = './img/space.jpg';
 }
 
 Background.prototype.draw = function() {

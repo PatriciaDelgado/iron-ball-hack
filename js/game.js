@@ -6,8 +6,8 @@ function Game(){
   canvas.height = 650;
   this.background = new Background(this.ctx);
   //this.hole = new Hole(this.ctx, this.x, this.y);
-  this.ball = new Ball(this.ctx);
-
+  this.ball = new Ball(this.ctx, this.score);
+  
   /* generador de agujeros random */
   this.myHoles = [];
   for (i = 0; i < 26; i++) {
@@ -27,7 +27,7 @@ function Game(){
   this.myHoles[3].bad = true;
   this.myHoles[4].x = 440;
   this.myHoles[4].y = 50;
-  this.myHoles[4].good = true;
+  this.myHoles[4].bad = true;
   this.myHoles[5].x = 540;
   this.myHoles[5].y = 50;
   this.myHoles[5].bad = true;
@@ -39,7 +39,7 @@ function Game(){
   this.myHoles[7].bad = true;
   this.myHoles[8].x = 290;
   this.myHoles[8].y = 130;
-  this.myHoles[8].good = true;
+  this.myHoles[8].bad = true;
   this.myHoles[9].x = 390;
   this.myHoles[9].y = 130;
   this.myHoles[9].bad = true;
@@ -57,7 +57,7 @@ function Game(){
   this.myHoles[13].bad = true;
   this.myHoles[14].x = 340;
   this.myHoles[14].y = 210;
-  this.myHoles[14].bad = true;
+  this.myHoles[14].good = true;
   this.myHoles[15].x = 440;
   this.myHoles[15].y = 210;
   this.myHoles[15].bad = true;
@@ -72,7 +72,7 @@ function Game(){
   this.myHoles[18].bad = true;
   this.myHoles[19].x = 290;
   this.myHoles[19].y = 310;
-  this.myHoles[19].good = true;
+  this.myHoles[19].bad = true;
   this.myHoles[20].x = 390;
   this.myHoles[20].y = 310;
   this.myHoles[20].bad = true;
@@ -91,23 +91,22 @@ function Game(){
   this.myHoles[25].x = 440;
   this.myHoles[25].y = 410;
   this.myHoles[25].bad = true;
-  console.log('esto es ' + this.myHoles[0].x) 
-  console.log(this.myHoles) 
-
+  //console.log('esto es ' + this.myHoles[0].x) 
+  //console.log(this.myHoles) 
 }
 
 
 Game.prototype.update = function() {
   this.background.draw();
-  //this.hole.draw();
   this.myHoles.forEach(function(obstacle) {
     obstacle.draw();
     obstacle.collision(this.ball);
   }.bind(this));
   this.ball.draw();
   this.ball.move();
-  score(this.ball);
-  
-  //this.hole.collision(this.ball);
+  console.log(this.ball.score);
+  if(this.ball.score == 1){
+    console.log('Se reanuda el juego');
+  }
 }
 
