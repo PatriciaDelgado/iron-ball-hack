@@ -1,4 +1,4 @@
-function Ball(ctx, score){
+function Ball(ctx){
   this.ctx = ctx;
   this.radio = 20;
   this.posX = 300;
@@ -10,6 +10,7 @@ function Ball(ctx, score){
   this.color = 'orange';
   this.area = (this.radio * this.radio * Math.PI);
   this.score = 0;
+  this.et = new Image();
 }
 Ball.prototype.move = function() {
   document.onkeydown = function(e) {
@@ -47,9 +48,9 @@ Ball.prototype.draw = function() {
   this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
   this.ctx.fill();
   this.ctx.closePath(); */
-  var et = new Image();
-  et.src = './img/ovni1.png';
-  this.ctx.drawImage(et, this.posX - this.radio, this.posY - this.radio, this.radio * 2, this.radio * 2);
+  //var et = new Image();
+  this.et.src = './img/ovni1.png';
+  this.ctx.drawImage(this.et, this.posX - this.radio, this.posY - this.radio, this.radio * 2, this.radio * 2);
 }
 
 

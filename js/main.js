@@ -1,5 +1,4 @@
 window.onload = function(){
-  
   document.getElementById("startButton").onclick = function() {
     var gameBg = document.getElementById("myGameBg");
     gameBg.classList.remove("hide");
@@ -11,6 +10,6 @@ window.onload = function(){
   
   function startGame() {
     var game = new Game('canvas');
-    setInterval(game.update.bind(game), 1000/60);
+    gameInterval = setInterval(game.update.bind(game), 1000/60);
   }
 }

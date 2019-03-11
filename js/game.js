@@ -24,7 +24,6 @@ function Game(){
   this.myHoles[2].bad = true;
   this.myHoles[3].x = 340;
   this.myHoles[3].y = 50;
-  this.myHoles[3].bad = true;
   this.myHoles[4].x = 440;
   this.myHoles[4].y = 50;
   this.myHoles[4].bad = true;
@@ -36,7 +35,6 @@ function Game(){
   this.myHoles[6].bad = true;
   this.myHoles[7].x = 190;
   this.myHoles[7].y = 130;
-  this.myHoles[7].bad = true;
   this.myHoles[8].x = 290;
   this.myHoles[8].y = 130;
   this.myHoles[8].bad = true;
@@ -57,7 +55,6 @@ function Game(){
   this.myHoles[13].bad = true;
   this.myHoles[14].x = 340;
   this.myHoles[14].y = 210;
-  this.myHoles[14].good = true;
   this.myHoles[15].x = 440;
   this.myHoles[15].y = 210;
   this.myHoles[15].bad = true;
@@ -91,13 +88,10 @@ function Game(){
   this.myHoles[25].x = 440;
   this.myHoles[25].y = 410;
   this.myHoles[25].bad = true;
-  //console.log('esto es ' + this.myHoles[0].x) 
-  //console.log(this.myHoles) 
 }
 
 
 Game.prototype.update = function() {
-
   this.ctx.clearRect(0,0, canvas.width, canvas.height);
   //this.background.draw();
   this.myHoles.forEach(function(obstacle) {
@@ -106,9 +100,38 @@ Game.prototype.update = function() {
   }.bind(this));
   this.ball.draw();
   this.ball.move();
-  console.log(this.ball.score);
-  if(this.ball.score == 1){
-    console.log('Se reanuda el juego');
+  switch(this.ball.score) {
+    case 0:
+      //console.log('level 1!');
+      this.myHoles[14].good = true;
+      this.myHoles[7].bad = true;
+      this.myHoles[7].good = false;
+      this.myHoles[3].bad = true;
+      this.myHoles[3].good = false;
+      this.ball.velocityY = 2;
+      break;
+    case 1:
+      //console.log('level 2!');
+      this.myHoles[14].bad = true;
+      this.myHoles[14].good = false;
+      this.myHoles[7].good = true;
+      this.myHoles[7].bad = false;
+      this.myHoles[3].bad = true;
+      this.myHoles[3].good = false;
+      this.ball.velocityY = 2.5
+      break;
+    case 2:
+      //console.log('level 3!')
+      this.myHoles[14].bad = true;
+      this.myHoles[14].good = false;
+      this.myHoles[7].bad = true;
+      this.myHoles[7].good = false;
+      this.myHoles[3].good = true;
+      this.myHoles[3].bad = false;
+      this.ball.velocityY = 3
+      break;
+    default:
+      console.log('you win!')
   }
 }
 
