@@ -15,19 +15,11 @@ Hole.prototype.draw = function() {
   this.ctx.fillStyle = "black";
   this.ctx.arc(this.x, this.y, this.radio, 0, 2 * Math.PI);
   if(this.bad == true) {
-    /* this.ctx.strokeStyle = "red";
-    this.ctx.stroke();
-    this.ctx.lineWidth = 8;
-    this.ctx.fill(); */
     var asteroid = new Image();
     asteroid.src = './img/asteroide-black.png';
     this.ctx.drawImage(asteroid, this.x - this.radio - 5, this.y - this.radio - 5, this.radio * 2.5, this.radio * 2.5);
   }
   if(this.good == true) {
-    /* this.ctx.strokeStyle = "green";
-    this.ctx.stroke();
-    this.ctx.lineWidth = 8;
-    this.ctx.fill(); */
     var et = new Image();
     et.src = './img/hole-green.png';
     this.ctx.drawImage(et, this.x - this.radio - 5, this.y - this.radio - 5, this.radio * 2.5, this.radio * 2.5);

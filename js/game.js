@@ -6,7 +6,12 @@ function Game(){
   canvas.height = 650;
   this.background = new Background(this.ctx);
   //this.hole = new Hole(this.ctx, this.x, this.y);
-  this.ball = new Ball(this.ctx, this.score);
+  this.ball = new Ball(this.ctx, this.score, 450, 580, './img/ovni1.png');
+  this.ball2 = new Ball(this.ctx, this.score, 150, 580, './img/asteroide.jpg');
+
+
+//this.setListeners()
+
   
   /* generador de agujeros random */
   this.myHoles = [];
@@ -97,21 +102,34 @@ Game.prototype.update = function() {
   this.myHoles.forEach(function(obstacle) {
     obstacle.draw();
     obstacle.collision(this.ball);
+    obstacle.collision(this.ball2);
   }.bind(this));
-  this.ball.draw();
+
+ /*  document.onkeydown = function(e) {
+    this.ball2.move(e);
+    this.ball.move(e);
+  }.bind(this); */
+  this.ball2.move();
   this.ball.move();
+  this.ball2.draw();
+  this.ball.draw();
+  
   switch(this.ball.score) {
     case 0:
-      //console.log('level 1!');
       this.myHoles[14].good = true;
       this.myHoles[7].bad = true;
       this.myHoles[7].good = false;
       this.myHoles[3].bad = true;
       this.myHoles[3].good = false;
       this.ball.velocityY = 2;
+      /* function moveLeftRight () {
+        setInterval(function(){
+          this.myHoles[25].x = 500;
+        }, 500);
+      }
+      moveLeftRight(); */
       break;
     case 1:
-      //console.log('level 2!');
       this.myHoles[14].bad = true;
       this.myHoles[14].good = false;
       this.myHoles[7].good = true;
@@ -121,7 +139,6 @@ Game.prototype.update = function() {
       this.ball.velocityY = 2.5
       break;
     case 2:
-      //console.log('level 3!')
       this.myHoles[14].bad = true;
       this.myHoles[14].good = false;
       this.myHoles[7].bad = true;
@@ -130,8 +147,41 @@ Game.prototype.update = function() {
       this.myHoles[3].bad = false;
       this.ball.velocityY = 3
       break;
+    case 3:
+      this.ball.velocityY = 3
+      break;
     default:
       console.log('you win!')
   }
 }
+
+/* Game.prototype.setListeners = function (){
+  document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        this.ball.isMovingLeft = true;
+        this.ball.startMoveTop = true;
+        break;
+      case 39:
+        this.ball.isMovingRight = true;
+        this.ball.startMoveTop = true;
+        break;
+      case 38:
+        this.ball.startMoveTop = true;
+        break;
+      case 68:
+        this.ball2.isMovingLeft = true;
+        this.ball2.startMoveTop = true;
+        break
+      case 65:
+        this.ball2.isMovingRight = true;
+        this.ball2.startMoveTop = true;
+        break
+      case 87:
+        this.ball2.startMoveTop = true;
+        break
+    }
+  }.bind(this)
+} */
+
 
