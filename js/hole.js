@@ -53,5 +53,7 @@ Hole.prototype.collision = function(ball) {
       ball.isMovingLeft = false;
       ball.startMoveTop = false;
       ball.score = ball.score + 1;
+      var audio = new Audio('./sounds/applause.mp3');
+      audio.play();
   }
 }

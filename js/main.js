@@ -40,6 +40,13 @@ window.onload = function() {
           break
       }
     };
+    document.onkeyup = function(e) {
+      game.ball.isMovingRight = false;
+      game.ball.isMovingLeft = false;
+      game.ball2.isMovingRight = false;
+      game.ball2.isMovingLeft = false;
+      //this.startMoveTop = false;
+    }.bind(this)
 
     gameInterval = setInterval(game.update.bind(game), 1000/60);
   }

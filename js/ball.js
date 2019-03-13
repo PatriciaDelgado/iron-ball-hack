@@ -14,12 +14,6 @@ function Ball(ctx, score, x, y, img){
   this.et.src = img
 }
 Ball.prototype.move = function(e) {
-  document.onkeyup = function(e) {
-    this.isMovingRight = false;
-    this.isMovingLeft = false;
-    //this.startMoveTop = false;
-  }.bind(this)
-
   if(this.isMovingRight === true && this.posX + this.radio <= canvas.width)this.posX += 2;
   if(this.isMovingLeft === true && this.posX - this.radio > 0)this.posX -= 2;
   //if(this.startMoveTop === true && this.posY - this.radio > 0)this.posY -= 5;
