@@ -72,5 +72,15 @@ div{
   display: block;
 }
 .Score{
+  font-size: 50px;
   position: absolute;
+  left:  45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Inconsolata', monospace;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 20px 35px;
 }

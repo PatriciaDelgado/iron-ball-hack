@@ -25,7 +25,7 @@ Ball.prototype.move = function(e) {
   //if(this.startMoveTop === true && this.posY - this.radio > 0)this.posY -= 5;
   if(this.startMoveTop === true)this.posY -= this.velocityY  ;
   //gameover function
-  if(this.posY <= (0 - this.radio)){
+  if(this.posY <= (0 - this.radio)) {
     var element = document.getElementById('GameOver');
     element.classList.add("GameOver__active");
   }

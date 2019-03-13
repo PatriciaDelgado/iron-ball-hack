@@ -104,11 +104,6 @@ Game.prototype.update = function() {
     obstacle.collision(this.ball);
     obstacle.collision(this.ball2);
   }.bind(this));
-
- /*  document.onkeydown = function(e) {
-    this.ball2.move(e);
-    this.ball.move(e);
-  }.bind(this); */
   this.ball2.move();
   this.ball.move();
   this.ball2.draw();
@@ -117,11 +112,13 @@ Game.prototype.update = function() {
   switch(this.ball.score) {
     case 0:
       this.myHoles[14].good = true;
+      //this.myHoles[24].good = true;
       this.myHoles[7].bad = true;
       this.myHoles[7].good = false;
       this.myHoles[3].bad = true;
       this.myHoles[3].good = false;
-      this.ball.velocityY = 2;
+      this.ball.velocityY = 1;
+      this.ball2.velocityY = 1;
       /* function moveLeftRight () {
         setInterval(function(){
           this.myHoles[25].x = 500;
@@ -136,7 +133,8 @@ Game.prototype.update = function() {
       this.myHoles[7].bad = false;
       this.myHoles[3].bad = true;
       this.myHoles[3].good = false;
-      this.ball.velocityY = 2.5
+      this.ball.velocityY = 1.5;
+      this.ball2.velocityY = 1.5;
       break;
     case 2:
       this.myHoles[14].bad = true;
@@ -145,14 +143,19 @@ Game.prototype.update = function() {
       this.myHoles[7].good = false;
       this.myHoles[3].good = true;
       this.myHoles[3].bad = false;
-      this.ball.velocityY = 3
+      this.ball.velocityY = 2;
+      this.ball2.velocityY = 2;
       break;
     case 3:
       this.ball.velocityY = 3
+      this.ball2.velocityY = 3;
       break;
     default:
       console.log('you win!')
   }
+
+  document.getElementById('score').innerHTML =  'Player 1: ' + this.ball.score;
+  document.getElementById('score2').innerHTML =  'Player 2: ' + this.ball2.score;
 }
 
 /* Game.prototype.setListeners = function (){

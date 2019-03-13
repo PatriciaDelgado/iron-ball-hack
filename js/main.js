@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function() {
   document.getElementById("startButton").onclick = function() {
     var gameBg = document.getElementById("myGameBg");
     gameBg.classList.remove("hide");
