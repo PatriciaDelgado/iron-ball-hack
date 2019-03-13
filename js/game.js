@@ -109,7 +109,7 @@ Game.prototype.update = function() {
   this.ball2.draw();
   this.ball.draw();
   
-  switch(this.ball.score) {
+  switch(this.ball.score || this.ball2.score) {
     case 0:
       this.myHoles[14].good = true;
       //this.myHoles[24].good = true;
