@@ -96,6 +96,7 @@ function Game(){
 }
 
 
+
 Game.prototype.update = function() {
   this.ctx.clearRect(0,0, canvas.width, canvas.height);
   //this.background.draw();
@@ -103,28 +104,47 @@ Game.prototype.update = function() {
     obstacle.draw();
     obstacle.collision(this.ball);
     obstacle.collision(this.ball2);
+   
+    /* if(this.ball.velocityY == 0 && 
+        this.ball2.velocityY == 0){
+      var element = document.getElementById('GameOver');
+      element.classList.add("GameOver__active");
+    } */
+
+    if(this.ball.velocityY == 0 && 
+      this.ball2.velocityY == 0 &&
+      this.ball.score > this.ball2.score){
+        console.log('gana el uno');
+        var element = document.getElementById('GameOver');
+        element.classList.add("GameOver__active");
+    } else if (this.ball.velocityY == 0 && 
+      this.ball2.velocityY == 0 &&
+      this.ball.score < this.ball2.score){
+        console.log('gana el dos')
+    } else if(this.ball.velocityY == 0 && 
+      this.ball2.velocityY == 0 &&
+      this.ball.score == this.ball2.score){
+        console.log('empatados')
+    } 
+
+
+
+
   }.bind(this));
   this.ball2.move();
   this.ball.move();
   this.ball2.draw();
   this.ball.draw();
-  
+  //cuando ambas estan en ela guajero malo hacemos el game over
   switch(this.ball.score || this.ball2.score) {
     case 0:
       this.myHoles[14].good = true;
-      //this.myHoles[24].good = true;
       this.myHoles[7].bad = true;
       this.myHoles[7].good = false;
       this.myHoles[3].bad = true;
       this.myHoles[3].good = false;
       this.ball.velocityY = 1;
       this.ball2.velocityY = 1;
-      /* function moveLeftRight () {
-        setInterval(function(){
-          this.myHoles[25].x = 500;
-        }, 500);
-      }
-      moveLeftRight(); */
       break;
     case 1:
       this.myHoles[14].bad = true;
@@ -153,38 +173,11 @@ Game.prototype.update = function() {
     default:
       console.log('you win!')
   }
+  
+
 
   document.getElementById('score').innerHTML =  'Player 1: ' + this.ball.score;
   document.getElementById('score2').innerHTML =  'Player 2: ' + this.ball2.score;
 }
-
-/* Game.prototype.setListeners = function (){
-  document.onkeydown = function(e) {
-    switch (e.keyCode) {
-      case 37:
-        this.ball.isMovingLeft = true;
-        this.ball.startMoveTop = true;
-        break;
-      case 39:
-        this.ball.isMovingRight = true;
-        this.ball.startMoveTop = true;
-        break;
-      case 38:
-        this.ball.startMoveTop = true;
-        break;
-      case 68:
-        this.ball2.isMovingLeft = true;
-        this.ball2.startMoveTop = true;
-        break
-      case 65:
-        this.ball2.isMovingRight = true;
-        this.ball2.startMoveTop = true;
-        break
-      case 87:
-        this.ball2.startMoveTop = true;
-        break
-    }
-  }.bind(this)
-} */
 
 

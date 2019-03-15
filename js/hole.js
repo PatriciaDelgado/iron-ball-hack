@@ -35,9 +35,9 @@ Hole.prototype.collision = function(ball) {
     ball.color = 'red';
     ball.posY = this.y;
     ball.posX = this.x;
-    //ball.et.src = './img/asteroide.jpg';
-    var element = document.getElementById('GameOver');
-    element.classList.add("GameOver__active");
+    ball.velocityY = 0;
+    //var element = document.getElementById('GameOver');
+    //element.classList.add("GameOver__active");
     
   } else if (this.good == true &&
     ball.posX - ball.radio / 2 <= this.x + this.radio &&
