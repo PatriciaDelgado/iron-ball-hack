@@ -19,7 +19,7 @@
         </div>
         <div class="Controles">
           <div class="Controles__item">
-            <div class="Controles__item-gamer"><img src="img/asteroide.jpg"/></div>
+            <div class="Controles__item-gamer"><img src="img/spaceman.png"/></div>
             <div class="Controles__content">
               <div class="Controles__content-top">
                 <div class="Controles__content-item">↑</div>
@@ -46,13 +46,25 @@
         <div class="ScoreItem" id="score">0</div>
         <div class="ScoreItem" id="score2">0</div>
       </div>
-      <!--<div class="Score" id="ScoreText">SCORE: </div>-->
         <canvas id="canvas"></canvas>
         <div class="GameOver" id="GameOver">
+            <div class="GameOver__content1">
+                <span>¡¡Habéis empatado!!</span><br><br>
+                <div class="MainGame__start-button"><span>Vuelve al juego</span></div>
+            </div>
+        </div>
+        <div class="GameOver" id="GameOver-win1">
           <div class="GameOver__content1">
-              <span>Oops, has perdido!</span>
+              <span>¡¡Gana el Marcianito!!</span><br><br>
+              <div class="MainGame__start-button"><span>Vuelve al juego</span></div>
           </div>
         </div>
+        <div class="GameOver" id="GameOver-win2">
+            <div class="GameOver__content1">
+                <span>¡¡Gana el Astronaura!!</span><br><br>
+                <div class="MainGame__start-button"><span>Vuelve al juego</span></div>
+            </div>
+          </div>
     </div>
   </div>
   <script src="js/ball.js"></script> 

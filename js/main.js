@@ -7,7 +7,15 @@ window.onload = function() {
     gameStartBg.classList.add("hide");
     startGame();
   };
-  
+  document.getElementById("GameOver").onclick = function() {
+    window.location.reload();
+  }
+  document.getElementById("GameOver-win1").onclick = function() {
+    window.location.reload();
+  }
+  document.getElementById("GameOver-win2").onclick = function() {
+    window.location.reload();
+  }
   function startGame() {
     var game = new Game('canvas');
     document.onkeydown = function(e) {
@@ -45,10 +53,7 @@ window.onload = function() {
       game.ball.isMovingLeft = false;
       game.ball2.isMovingRight = false;
       game.ball2.isMovingLeft = false;
-      //this.startMoveTop = false;
     }.bind(this)
-
     gameInterval = setInterval(game.update.bind(game), 1000/60);
   }
 }
-

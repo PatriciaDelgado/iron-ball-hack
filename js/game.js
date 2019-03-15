@@ -7,7 +7,7 @@ function Game(){
   this.background = new Background(this.ctx);
   //this.hole = new Hole(this.ctx, this.x, this.y);
   this.ball = new Ball(this.ctx, this.score, 450, 580, './img/ovni1.png');
-  this.ball2 = new Ball(this.ctx, this.score, 150, 580, './img/asteroide.jpg');
+  this.ball2 = new Ball(this.ctx, this.score, 150, 580, './img/spaceman.png');
 
 
 //this.setListeners()
@@ -94,9 +94,6 @@ function Game(){
   this.myHoles[25].y = 410;
   this.myHoles[25].bad = true;
 }
-
-
-
 Game.prototype.update = function() {
   this.ctx.clearRect(0,0, canvas.width, canvas.height);
   //this.background.draw();
@@ -104,32 +101,25 @@ Game.prototype.update = function() {
     obstacle.draw();
     obstacle.collision(this.ball);
     obstacle.collision(this.ball2);
-   
-    /* if(this.ball.velocityY == 0 && 
-        this.ball2.velocityY == 0){
-      var element = document.getElementById('GameOver');
-      element.classList.add("GameOver__active");
-    } */
-
     if(this.ball.velocityY == 0 && 
       this.ball2.velocityY == 0 &&
       this.ball.score > this.ball2.score){
         console.log('gana el uno');
-        var element = document.getElementById('GameOver');
+        var element = document.getElementById('GameOver-win1');
         element.classList.add("GameOver__active");
     } else if (this.ball.velocityY == 0 && 
       this.ball2.velocityY == 0 &&
       this.ball.score < this.ball2.score){
-        console.log('gana el dos')
+        console.log('gana el dos');
+        var element = document.getElementById('GameOver-win2');
+        element.classList.add("GameOver__active");
     } else if(this.ball.velocityY == 0 && 
       this.ball2.velocityY == 0 &&
       this.ball.score == this.ball2.score){
-        console.log('empatados')
+        console.log('empatados');
+        var element = document.getElementById('GameOver');
+        element.classList.add("GameOver__active");
     } 
-
-
-
-
   }.bind(this));
   this.ball2.move();
   this.ball.move();

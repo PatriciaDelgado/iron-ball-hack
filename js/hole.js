@@ -1,4 +1,3 @@
-
 function Hole(ctx, x, y, good, bad){
   this.ctx = ctx;
   this.radio = 20;
@@ -8,7 +7,6 @@ function Hole(ctx, x, y, good, bad){
   this.good;
   this.bad;
   this.area = (this.radio * this.radio * Math.PI);
-  //this.score = 0;
 }
 Hole.prototype.draw = function() {
   this.ctx.beginPath();
@@ -36,9 +34,6 @@ Hole.prototype.collision = function(ball) {
     ball.posY = this.y;
     ball.posX = this.x;
     ball.velocityY = 0;
-    //var element = document.getElementById('GameOver');
-    //element.classList.add("GameOver__active");
-    
   } else if (this.good == true &&
     ball.posX - ball.radio / 2 <= this.x + this.radio &&
     ball.posX + ball.radio / 2 >= this.x - this.radio &&

@@ -16,9 +16,7 @@ function Ball(ctx, score, x, y, img){
 Ball.prototype.move = function(e) {
   if(this.isMovingRight === true && this.posX + this.radio <= canvas.width)this.posX += 2;
   if(this.isMovingLeft === true && this.posX - this.radio > 0)this.posX -= 2;
-  //if(this.startMoveTop === true && this.posY - this.radio > 0)this.posY -= 5;
-  if(this.startMoveTop === true)this.posY -= this.velocityY  ;
-  //gameover function
+  if(this.startMoveTop === true)this.posY -= this.velocityY;
   if(this.posY <= (0 - this.radio)) {
     var element = document.getElementById('GameOver');
     element.classList.add("GameOver__active");

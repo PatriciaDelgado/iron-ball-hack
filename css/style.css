@@ -20,19 +20,23 @@ div{
   align-items: center;
   color: white;
   text-align: center;
+  height:  100%;;
 }
 #canvas {
 }
 .MainGame__start{
   width: 600px;
-  height: 650px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .MainGame__start-title{
   font-size: 65px;
   margin-bottom: 50px;
   text-align: center;
   font-weight: bold;
-  padding-top: 40px;
 }
 .MainGame__start-title span{
   color: greenyellow;
@@ -144,9 +148,9 @@ div{
   justify-content: flex-end;
 }
 .GameOver{
-  width: 400px;
-  padding: 20px 50px;
-  background-color: red;
+  width: 520px;
+  padding: 43px 49px;
+  border: 2px solid greenyellow;
   border-radius: 5px;
   color: white;
   text-align: center;
@@ -157,7 +161,11 @@ div{
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
+  background-color: rgba(0, 0, 0, 0.8);
 }
+.GameOver .MainGame__start-button{
+  border-color: greenyellow;
+ }
 .GameOver__active{
   display: block;
 }
