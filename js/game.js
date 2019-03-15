@@ -104,19 +104,16 @@ Game.prototype.update = function() {
     if(this.ball.velocityY == 0 && 
       this.ball2.velocityY == 0 &&
       this.ball.score > this.ball2.score){
-        console.log('gana el uno');
         var element = document.getElementById('GameOver-win1');
         element.classList.add("GameOver__active");
     } else if (this.ball.velocityY == 0 && 
       this.ball2.velocityY == 0 &&
       this.ball.score < this.ball2.score){
-        console.log('gana el dos');
         var element = document.getElementById('GameOver-win2');
         element.classList.add("GameOver__active");
     } else if(this.ball.velocityY == 0 && 
       this.ball2.velocityY == 0 &&
       this.ball.score == this.ball2.score){
-        console.log('empatados');
         var element = document.getElementById('GameOver');
         element.classList.add("GameOver__active");
     } 
