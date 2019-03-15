@@ -11,8 +11,35 @@
 <body>
   <div class="MainGame">
     <div class="MainGame__start" id="GameStartBg">
-        <div class="MainGame__start-title">IronHackBall</div>
-        <div class="MainGame__start-button" id="startButton" onclick="startGame()">Start Game</div>
+        <div class="MainGame__start-title">Iron<span>Hack</span>Ball</div>
+        <div class="MainGame__start-description">
+          A nuestro marcianito le han robado la nave :( <br><br>
+          Tu misión será ayudarle a encontrarla antes de que lo hagan los astronautas, pero... <br><br>
+          <span>¡¡Cuidado con los asteroides!!</span>
+        </div>
+        <div class="Controles">
+          <div class="Controles__item">
+            <div class="Controles__item-gamer"><img src="img/asteroide.jpg"/></div>
+            <div class="Controles__content">
+              <div class="Controles__content-top">
+                <div class="Controles__content-item">↑</div>
+              </div>
+              <div class="Controles__content-item Controles__content-left">←</div>
+              <div class="Controles__content-item Controles__content-right">→</div>
+            </div>
+          </div>
+          <div class="Controles__item">
+              <div class="Controles__item-gamer"><img src="img/ovni1-last.png"/></div>
+              <div class="Controles__content">
+                <div class="Controles__content-top">
+                  <div class="Controles__content-item">W</div>
+                </div>
+                <div class="Controles__content-item Controles__content-left">A</div>
+                <div class="Controles__content-item Controles__content-right">D</div>
+              </div>
+            </div>
+        </div>
+        <div class="MainGame__start-button" id="startButton" onclick="startGame()"><span>Start Game</span></div>
     </div>
     <div class="MainGame__game hide" id="myGameBg">
       <div class="Score">
