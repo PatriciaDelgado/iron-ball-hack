@@ -8,7 +8,8 @@ function Game(){
   //this.hole = new Hole(this.ctx, this.x, this.y);
   this.ball = new Ball(this.ctx, this.score, 450, 580, './img/ovni1.png');
   this.ball2 = new Ball(this.ctx, this.score, 150, 580, './img/spaceman.png');
-
+  var audio = new Audio('./sounds/game-sound.mp3');
+  audio.play();
 
 //this.setListeners()
 
